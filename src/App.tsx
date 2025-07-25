@@ -104,10 +104,9 @@ const [allSelected, setAllSelected] = useState<Fields[]>([])
     setLazyState({ first: event.first, rows: event.rows });
   };
 
-  const onSelectionChange = (e: DataTableSelectionChangeEvent<Fields[]>) => {
-    setSelectedData(e.value);
-  };
-
+const onSelectionChange = (e: { value: any }) => {
+  setSelectedData(e.value);
+};
 
 const onSelectAllChange = (e: DataTableSelectAllChangeEvent) => {
   setSelectAll(e.checked);
