@@ -4,7 +4,6 @@ import { DataTable } from 'primereact/datatable';
 import type {
   DataTablePageEvent,
   DataTableSelectAllChangeEvent,
-
 } from 'primereact/datatable';
 
 import { Column } from 'primereact/column';
@@ -45,8 +44,8 @@ export const App: React.FC = () => {
   const [selectedData, setSelectedData] = useState<Fields[] | null>(null);
   const [selectAll, setSelectAll] = useState<boolean>(false);
   const [rowCount, setRowCount] = useState<string>('');
-const [desiredSelectCount, setDesiredSelectCount] = useState<number>(0);
-const [allSelected, setAllSelected] = useState<Fields[]>([])
+  const [desiredSelectCount, setDesiredSelectCount] = useState<number>(0);
+  const [allSelected, setAllSelected] = useState<Fields[]>([])
 
   const toast = useRef<Toast>(null);
   const op = useRef<OverlayPanel>(null);
@@ -135,7 +134,7 @@ const onSelectAllChange = (e: DataTableSelectAllChangeEvent) => {
 
 
 const handleRowSelection = () => {
-  const count = parseInt(rowCount, 12);
+  const count = parseInt(rowCount, 10);
   if (!isNaN(count) && count > 0) {
     setDesiredSelectCount(count);
     const selection = apiData.slice(0, count);
